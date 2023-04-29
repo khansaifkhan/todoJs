@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,900&family=Dosis:wght@200&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@1,900&family=Dosis:wght@200&family=Ubuntu:ital,wght@1,700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0
+}
+
+.main-container{
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.container{
+    width: 80%;
+    color: white;
+    position: relative;
+}
+
+.task-add{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+}
+
+.task-list{
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.list{
+    font-size: 40px;
+    font-weight: 0px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.button-add{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 16%;
+}
+
+.addButton{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    background-color: lightskyblue;
+    color: black;
+    font-weight: bold;
+    font-size: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.addButton-content{
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.addItem{
+    font-size: 35px;
+    font-weight: 0px;
+    font-family: 'Dosis', sans-serif;
+}
+
+.trips-box{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.no-items{
+    font-size: 30px;
+    font-family: 'Dosis', sans-serif;
+    position: absolute;
+    display: block;
+}
+
+.box{
+    width: 20%;
+    min-height: 300px;
+    max-height: 300px;
+    background-color: white;
+    margin: 15px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.box-heading{
+    color: rgb(221, 50, 50);
+    padding: 18px 0;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.box-contents{
+    max-height: 65%;
+    overflow-y: scroll;
+    scroll-behavior:smooth;
+    text-align: center;
+}
+
+/* .u-list{
+    color: black;
+    overflow-y: scroll;
+} */
+
+.box-list{
+    list-style: none;
+    font-weight: 500;
+    line-height: 30px;
+    color: black;
+    word-wrap: normal;
+}
+
+.mark{
+    font-size: 12px;
+    padding: 4px;
+    background-color: rgb(135, 206, 250);
+    border-radius: 20px;
+    color: white;
+    margin-left: 5px;
+}
+
+span{
+    cursor: pointer;
+}
+
+.model-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    backdrop-filter: blur(2px);
+    display: none;
+    z-index: 99;
+}
+
+.modelList-container{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    backdrop-filter: blur(2px);
+    display: none;
+    z-index: 99;
+}
+
+.model{
+    width: 20%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px 10px;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    text-align: center;
+    backdrop-filter: none;
+}
+
+.model-input{
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+    color: gray;
+    border: 1px solid rgb(228, 87, 36);
+    border-radius: 10px;
+    text-align: center;
+}
+
+.model-heading{
+    color: rgb(228, 87, 36);
+    font-size: 22px;
+    text-align: center;
+}
+
+.model-input::placeholder{
+    font-size: 10px;
+    color: gray;
+}
+
+.add-close{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+}
+
+#model-add{
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(228, 87, 36);
+    color: white;
+    cursor: pointer;
+}
+
+#addList {
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(228, 87, 36);
+    color: white;
+    cursor: pointer;
+}
+
+#model-close {
+    padding: 5px 15px;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(228, 87, 36);
+    color: white;
+    cursor: pointer;
+}
+
+.img-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#addB{
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    margin: 3px;
+}
+
+#delB{
+    color: white;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 3px;
+}
+
+
+/* media query for mobile */
+@media only screen and (max-width: 500px) {
+    .button-add{
+        width: 40%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .addItem{
+        font-size: 25px;
+    }
+
+    .task-list{
+        width: 32%;
+    }
+
+    .task{
+        font-size: 30px;
+    }
+
+    .list{
+        font-size: 30px;
+    }
+
+    .model{
+        width: 40%;
+        left: 28%;
+        box-shadow: 2px 2px 5px gray;
+    }
+
+    .add-close{
+        width: 80%;
+    }
+
+    .trips-box{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    #do{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .box-heading{
+        padding: 12px 0;
+        font-size: 24px;
+    }
+
+    .box{
+        width: 60%;
+        min-height: 280px;
+        max-height: 280px;
+    }
+
+    .box-contents{
+        max-height: 180px;
+    }
+
+}
+
+/* media query for tablet */
+@media only screen and ((min-width: 500px) and (max-width: 700px)){
+    .button-add{
+        width: 30%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .addItem{
+        font-size: 25px;
+    }
+    .task-list{
+        width: 25%;
+    }
+    .task{
+        font-size: 30px;
+    }
+    .list{
+        font-size: 30px;
+    }
+    .model{
+        width: 40%;
+        left: 28%;
+        box-shadow: 2px 2px 5px gray;
+    }
+    .add-close{
+        width: 60%;
+    }
+    .trips-box{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    #do{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+    }
+    .box-heading{
+        padding: 12px 0;
+        font-size: 24px;
+    }
+    .box{
+        width: 60%;
+        min-height: 300px;
+        max-height: 300px;
+    }
+
+    .box-contents{
+        max-height: 200px;   
+    }
+}
+
+@media only screen and ((min-width: 700px) and (max-width: 1000px)){
+    .button-add {
+        width: 22%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .addItem {
+        font-size: 25px;
+    }
+
+    .task-list {
+        width: 16%;
+    }
+
+    .task {
+        font-size: 30px;
+    }
+
+    .list {
+        font-size: 30px;
+    }
+
+    .model {
+        width: 20%;
+        box-shadow: 2px 2px 5px gray;
+    }
+
+    .add-close {
+        width: 80%;
+    }
+
+    .trips-box {
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    #do {
+        margin-top: 20px;
+    }
+
+    .box-heading {
+        padding: 12px 0;
+        font-size: 24px;
+    }
+
+    .box {
+        width: 30%;
+        min-height: 300px;
+        max-height: 300px;
+        margin: 10px 2px;
+    }
+
+    .box-contents {
+        max-height: 200px;
+    }
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="mainTaskP.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+        width: 100vw;
+        height: 100vh;
+      }
+      .navContainer {
+        margin-top: 40px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background-color: white;
+        padding: 5px;
+      }
+
+      .back {
+        color: white;
+        font-size: 25px;
+      }
+
+      .back-button {
+        width: 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      #heading {
+        color: white;
+        font-weight: bold;
+      }
+
+      .addButton-contents {
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        background-color: lightskyblue;
+        color: black;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      #do {
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: auto;
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="model-container" id="model-container">
+      <div class="model" id="model">
+        <div class="model-heading">Add New List</div>
+        <input
+          type="text"
+          class="model-input"
+          id="model-input"
+          placeholder="Add New List"
+        />
+        <div class="add-close">
+          <button id="model-add" onclick="addModells()">Add</button>
+          <button id="model-close" onclick="closeModell()">Close</button>
+        </div>
+      </div>
+    </div>
+    <div class="navContainer" id="navContainer">
+      <div class="back-button">
+        <a href="./index.html"><img src="back.png" alt="back" /></a>
+        <span class="back" id="back">Back</span>
+      </div>
+      <h1 id="heading"></h1>
+      <h1 class="addButton-contents" onclick="showModel()">+</h1>
+    </div>
+
+    <div id="do"></div>
+  </body>
+  <script>
+    let queryString = new URLSearchParams(window.location.search);
+    document.getElementById("heading").innerHTML = queryString.get("title");
+  </script>
+  <script src="script.js"></script>
+</html>

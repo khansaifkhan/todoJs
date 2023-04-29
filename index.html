@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="mainTaskP.css" />
+  </head>
+  <body>
+    <div class="model-container" id="model-container">
+      <div class="model" id="model">
+        <div class="model-heading">Add New List</div>
+        <input
+          type="text"
+          class="model-input"
+          id="model-input"
+          placeholder="Add New List"
+        />
+        <div class="add-close">
+          <button id="model-add" onclick="addModel()">Add</button>
+          <button id="model-close" onclick="closeModel()">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modelList-container" id="modelList-container">
+      <div class="model" id="model">
+        <div class="model-heading">Add New List</div>
+        <input
+          type="text"
+          class="model-input"
+          id="model-input2"
+          placeholder="Add New List"
+        />
+        <div class="add-close">
+          <button id="addList">Add</button>
+          <button id="model-close" onclick="closeModel()">Close</button>
+        </div>
+      </div>
+    </div>
+    <div class="main-container" id="main-container">
+      <div class="container">
+        <div class="task-add">
+          <div class="task-list">
+            <h1 class="task" id="task">Tasks</h1>
+            <p class="list" id="list">List</p>
+          </div>
+          <div class="button-add">
+            <a class="addButton"
+              ><h1 class="addButton-content" onclick="showModel()">+</h1></a
+            >
+            <p class="addItem">Add Item</p>
+          </div>
+        </div>
+
+        <!-- trips -->
+        <div class="trips-box" id="trips-box"></div>
+        <div class="no-items" id="no-items">No Items in the todo list</div>
+      </div>
+    </div>
+  </body>
+  <script src="./script.js"></script>
+</html>
