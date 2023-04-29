@@ -172,7 +172,5 @@ const strikeThrough = (e) => {
 };
 
 const reDirect = (e) => {
-  window.open(
-    `http://127.0.0.1:5500/index2.html?title=${e.currentTarget.myParam}`
-  );
+  window.open(`index2.html?title=${e.currentTarget.myParam}`);
 };
